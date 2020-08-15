@@ -21,9 +21,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerLabel: UILabel!
     
     // じゃんけん結果の値
-    var answerNumber = 0;
+    var answerNumber = 0
     
     @IBAction func shuffleAction(_ sender: Any) {
+        
+        answerNumber = Int.random(in: 0..<3)
+        
         if answerNumber == 0 {
             answerLabel.text = "グー"
             answerImageView.image = UIImage(named:"gu")
@@ -34,11 +37,7 @@ class ViewController: UIViewController {
             answerLabel.text = "パー"
             answerImageView.image = UIImage(named:"pa")
         } else {
-            answerNumber = 0;
-            answerLabel.text = "グー"
-            answerImageView.image = UIImage(named:"gu")
         }
-        answerNumber += 1
     }
 }
 
